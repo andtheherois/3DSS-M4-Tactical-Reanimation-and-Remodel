@@ -1,0 +1,415 @@
+;------------------------------------------------------------------------------------
+
+![wpn_m4_tac]
+
+ammo_elapsed                             = 40	; 40rnd mag
+ammo_mag_size                            = 40
+startup_ammo                             = 90
+
+grenade_class                            = ammo_m209, ammo_m209_bad, ammo_m209_verybad
+grenade_launcher_name                    = wpn_addon_grenade_launcher_m203
+grenade_launcher_status                  = 0
+grenade_launcher_x                       = 145
+grenade_launcher_y                       = 18
+launch_speed                             = 0
+
+        fire_point                       = 0.050233, -0.002477, 0.760982
+        orientation                      = -0.853757, -3.144818, -0.640572
+        position                         = -0.070597, 0.072697, -0.281317
+        shell_point                      = 0.009787, -0.103539, 0.277067
+        strap_orientation                = -3.214292, -5.469335, 74.94023
+        strap_position                   = -0.206479, -0.068036, -0.172204
+		
+laser_status 							 = true
+use_alt_aim_hud             		     = true
+
+;---------------------------------------Sounds---------------------------------------
+
+snd_reload								= weapons\m4tac_young_prince\m4_reload
+snd_reload1								= weapons\m4tac_young_prince\m4_reload_2
+snd_reload_empty						= weapons\m4tac_young_prince\m4_reload_empty
+snd_reload_empty1						= weapons\m4tac_young_prince\m4_reload_empty_2
+snd_reload_misfire						= weapons\m4tac_young_prince\m4_unjam
+snd_bore								= weapons\m4tac_young_prince\m4_inpect
+scripted_snd_ammo_check					= weapons\m4tac_young_prince\m4_ammo
+scripted_snd_ammo_check_w_gl			= weapons\m4tac_young_prince\m4_ammo
+scripted_snd_ammo_check_empty			= weapons\m4tac_young_prince\m4_ammo_empty
+scripted_snd_ammo_check_empty_w_gl		= weapons\m4tac_young_prince\m4_ammo_empty
+scripted_snd_ammo_check_aim				= weapons\m4tac_young_prince\m4_ammo_aim
+scripted_snd_ammo_check_empty_aim 		= weapons\m4tac_young_prince\m4_ammo_aim
+scripted_snd_ammo_check_w_gl_aim		= weapons\m4tac_young_prince\m4_ammo_aim
+scripted_snd_ammo_check_empty_w_gl_aim  = weapons\m4tac_young_prince\m4_ammo_aim
+snd_reload_grenade     					= weapons\m4a1_ras\m4a1_gl_reload
+snd_shoot_grenade						= weapons\m203\m203_grenshoot
+snd_switch 								= $no_sound
+
+;------------------------------------------------------------------------------------
+![wpn_m4_tac_hud]
+
+aim_hud_offset_alt_pos                  = -0.0602, -0.0506, -0.03
+aim_hud_offset_alt_pos_16x9             = -0.0602, -0.0506, -0.03
+aim_hud_offset_alt_rot                  = -0.022, -0.005, 0.78
+aim_hud_offset_alt_rot_16x9             = -0.022, -0.005, 0.78
+
+gl_hud_offset_pos            		    = -0.08271, -0.021062, -0.037125
+gl_hud_offset_pos_16x9       		    = -0.08271, -0.021062, -0.037125
+gl_hud_offset_rot            		    = 0.007103, 0.046717, 0.120535
+gl_hud_offset_rot_16x9       		    = 0.007103, 0.046717, 0.120535
+
+fire_bone                       	    = muzzle				; fix muzzle location
+fire_bone2                      	    = muzzle_gl	
+fire_point                      	    = 0, 0, 0
+fire_point2                     	    = 0, 0, 0
+
+;;-------------------------------------Animation--------------------------------------
+;;idle
+;	anm_idle_aim						= 1_m4_aim					, idle
+;	anm_idle							= 1_m4_idle					, idle				, 1.1			
+;	anm_idle_moving						= 1_m4_move					, idle				, 1.1
+;	anm_idle_moving_crouch				= 1_m4_move					, idle				, 0.85
+;	anm_idle_sprint						= 1_m4_sprint				, idle				, 1.1	              
+;	anm_sprint_start					= 1_m4_sprint_start			, idle	               
+;	anm_sprint_end						= 1_m4_sprint_end			, idle				 																									  
+;	anm_show							= 2_m4_draw					, idle				, 1.1
+;	anm_hide							= 2_m4_hide					, idle                	              
+;	anm_switch_mode						= 2_m4_switch				, idle                
+;	anm_switch_mode_aim					= 2_m4_switch				, idle
+;	anm_hide_variant1 					= 2_m4_hide_alt				, idle				, 1.1
+;;	anm_show_variant1   				= 2_m4_draw_alt				 					, 1.2	; it has bolt animation
+;;empty idle	                                                                              
+;	anm_idle_aim_empty					= 1_m4_aim					, idle_empty          
+;	anm_idle_empty						= 1_m4_idle					, idle_empty		, 1.1		
+;	anm_idle_moving_empty				= 1_m4_move					, idle_empty		, 1.1
+;	anm_idle_moving_crouch_empty		= 1_m4_move					, idle_empty		, 0.85
+;	anm_idle_sprint_empty				= 1_m4_sprint				, idle_empty        , 1.1	; sprint
+;	anm_sprint_start_empty				= 1_m4_sprint_start			, idle_empty          
+;	anm_sprint_end_empty				= 1_m4_sprint_end			, idle_empty		 																											  
+;	anm_show_empty						= 2_m4_draw					, idle_empty		, 1.1
+;	anm_hide_empty						= 2_m4_hide					, idle_empty
+;	anm_switch_mode_empty				= 2_m4_switch				, idle_empty
+;	anm_switch_mode_empty_aim			= 2_m4_switch				, idle_empty
+;;shoot										                          
+;	anm_shots							= 3_m4_shoot				, 3_m4_shoot		; higher number means higher recoil
+;	anm_shots_variant1              	= 3_m4_shoot2               , 3_m4_shoot	
+;	anm_shots_variant2					= 3_m4_shoot3               , 3_m4_shoot 	
+;	anm_shots_variant3					= 3_m4_shoot4               , 3_m4_shoot  		
+;	anm_shots_aim						= 3_m4_shoot				, 3_m4_shoot		; aim shoot must use small recoil
+;	anm_shots_aim_variant1     			= 3_m4_shoot2               , 3_m4_shoot
+;	anm_shot_l							= 3_m4_shoot3   			, 3_m4_shoot_last
+;	anm_shots_aim_l						= 3_m4_shoot3				, 3_m4_shoot_last
+;;inspect										
+;	anm_bore							= 4_m4_inspect
+;	anm_bore_empty						= 4_m4_inspect_empty
+;;reload				
+;	anm_reload_aim						= 5_m4_aim_reload
+;	anm_reload_empty_aim				= 5_m4_aim_reload_empty
+;	anm_reload_misfire_aim        	 	= 5_m4_aim_reload_jam
+;	anm_reload							= 5_m4_reload_30
+;	anm_reload_variant1					= 5_m4_reload_alt
+;	anm_reload_empty					= 5_m4_reload_empty_30
+;	anm_reload_empty_variant1			= 5_m4_reload_empty_alt
+;	anm_reload_misfire        	 		= 5_m4_reload_jam
+;;ammocheck								
+;	anm_ammo_check						= 6_m4_ammo
+;	anm_ammo_check_empty				= 6_m4_ammo_empty
+;	anm_ammo_check_aim              	= 6_m4_ammo_aim
+;	anm_ammo_check_empty_aim        	= 6_m4_ammo_aim_empty
+;
+
+;---------------------------------------Gl_off---------------------------------------
+
+;GL idle(end with _w_gl)
+
+	anm_idle_sprint_w_gl				= 1_m4_sprint				, idle	            , 1.1   
+	anm_idle_sprint_empty_w_gl			= 1_m4_sprint				, idle_empty        , 1.1   
+
+	anm_idle_w_gl_aim					= 1_m4gl_aim				, idle
+	anm_idle_w_gl						= 1_m4gl_idle				, idle				, 1.1			
+	anm_idle_moving_w_gl				= 1_m4gl_move				, idle				, 1.1
+	anm_idle_moving_crouch_w_gl			= 1_m4gl_move				, idle				, 0.85
+	anm_sprint_start_w_gl				= 1_m4gl_sprint_start		, idle	              
+	anm_sprint_end_w_gl					= 1_m4gl_sprint_end			, idle				 																								 
+	anm_show_w_gl						= 2_m4gl_draw				, idle				
+	anm_hide_w_gl						= 2_m4gl_hide				, idle
+	anm_switch_mode_w_gl				= 2_m4gl_switch				, idle
+	anm_switch_mode_w_gl_aim			= 2_m4gl_switch				, idle
+;GL empty idle                                                      
+	anm_idle_empty_w_gl_aim				= 1_m4gl_aim				, idle_empty          
+	anm_idle_empty_w_gl					= 1_m4gl_idle				, idle_empty		, 1.1					
+	anm_idle_moving_empty_w_gl			= 1_m4gl_move				, idle_empty		, 1.1	
+	anm_idle_moving_crouch_empty_w_gl	= 1_m4gl_move				, idle_empty		, 0.85
+	anm_sprint_start_empty_w_gl			= 1_m4gl_sprint_start		, idle_empty          
+	anm_sprint_end_empty_w_gl			= 1_m4gl_sprint_end			, idle_empty		 																										            		  
+	anm_show_empty_w_gl					= 2_m4gl_draw				, idle_empty		
+	anm_hide_empty_w_gl					= 2_m4gl_hide				, idle_empty
+	anm_switch_mode_empty_w_gl			= 2_m4gl_switch				, idle_empty
+	anm_switch_mode_empty_w_gl_aim		= 2_m4gl_switch				, idle_empty
+;GL shoot									                        
+	anm_shots_w_gl						= 3_m4gl_shoot				, 3_m4_shoot	
+	anm_shots_w_gl_variant1             = 3_m4gl_shoot2             , 3_m4_shoot	
+	anm_shots_w_gl_variant2				= 3_m4gl_shoot3             , 3_m4_shoot 	
+	anm_shots_w_gl_variant3				= 3_m4gl_shoot4             , 3_m4_shoot  	
+	anm_shots_w_gl_aim					= 3_m4gl_shoot              , 3_m4_shoot	
+	anm_shots_w_gl_aim_variant1			= 3_m4gl_shoot2             , 3_m4_shoot
+	anm_shot_w_gl_l						= 3_m4gl_shoot3   	  		, 3_m4_shoot_last
+	anm_shots_w_gl_aim_l				= 3_m4gl_shoot3				, 3_m4_shoot_last			
+;GL inspect									
+	anm_bore_w_gl						= 4_m4gl_inspect			, 4_m4_inspect
+	anm_bore_empty_w_gl					= 4_m4gl_inspect_empty      , 4_m4_inspect_empty
+;GL reload				                                             
+	anm_reload_w_gl_aim					= 5_m4gl_aim_reload         , 5_m4_aim_reload
+	anm_reload_empty_w_gl_aim			= 5_m4gl_aim_reload_empty   , 5_m4_aim_reload_empty
+	anm_reload_misfire_w_gl_aim    	 	= 5_m4gl_aim_reload_jam		, 5_m4_aim_reload_jam				
+	anm_reload_w_gl						= 5_m4gl_reload_30          , 5_m4_reload_30
+	anm_reload_w_gl_variant1			= 5_m4gl_reload_alt         , 5_m4_reload_alt
+	anm_reload_empty_w_gl				= 5_m4gl_reload_empty_30    , 5_m4_reload_empty_30
+	anm_reload_empty_w_gl_variant1		= 5_m4gl_reload_empty_alt   , 5_m4_reload_empty_alt
+	anm_reload_misfire_w_gl        	 	= 5_m4gl_reload_jam         , 5_m4_reload_jam
+;GL ammocheck(script req)								             
+	anm_ammo_check_w_gl					= 6_m4gl_ammo               , 6_m4_ammo
+	anm_ammo_check_empty_w_gl			= 6_m4gl_ammo_empty         , 6_m4_ammo_empty
+	anm_ammo_check_w_gl_aim             = 6_m4gl_ammo_aim           , 6_m4_ammo_aim
+	anm_ammo_check_empty_w_gl_aim       = 6_m4gl_ammo_aim   		, 6_m4_ammo_aim_empty
+
+
+;---------------------------------------Gl_on---------------------------------------
+
+;GL_handling(end with _g)
+
+	anm_idle_sprint_g					= 1_m4_sprint					, idle_g			, 1.1	 
+																			 
+	anm_idle_g							= 7_m4g_idle					, idle_g			, 1.1	
+	anm_idle_moving_g					= 7_m4g_move					, idle_g			, 1.1
+	anm_idle_moving_crouch_g			= 7_m4g_move					, idle_g			, 0.85 								
+	anm_sprint_start_g 					= 7_m4g_sprint_start			, idle_g				
+	anm_sprint_end_g   					= 7_m4g_sprint_end				, idle_g				
+	anm_show_g                  	    = 8_m4g_draw					, idle_g			, 1.1
+	anm_hide_g                  	    = 8_m4g_hide					, idle_g			
+	anm_switch_g						= 8_m4g_on						, 8_m4g_on													
+	anm_switch                  	    = 8_m4g_off						, 8_m4g_off									
+	anm_shots_g							= 9_m4g_shoot
+	anm_reload_g						= 9_m4g_reload
+		
+;;-------------------------------------AFG grip--------------------------------------
+;
+;;idle
+;	anm_idle_sprint						= 1_m4_sprint					, idle				, 1.1	              
+;	anm_idle_sprint_empty				= 1_m4_sprint					, idle_empty        , 1.1	
+;
+;	anm_idle_aim						= 1_m4afg_aim					, idle
+;	anm_idle							= 1_m4afg_idle					, idle				, 1.1			
+;	anm_idle_moving						= 1_m4afg_move					, idle				, 1.1
+;	anm_idle_moving_crouch				= 1_m4afg_move					, idle				, 0.85
+;	anm_sprint_start					= 1_m4afg_sprint_start			, idle	               
+;	anm_sprint_end						= 1_m4afg_sprint_end			, idle																													  
+;	anm_show							= 2_m4afg_draw					, idle				, 1.1	
+;	anm_hide							= 2_m4afg_hide					, idle                	              
+;	anm_switch_mode						= 2_m4afg_switch				, idle                
+;	anm_switch_mode_aim					= 2_m4afg_switch				, idle
+;;empty idle	                                                                              
+;	anm_idle_aim_empty					= 1_m4afg_aim					, idle_empty          
+;	anm_idle_empty						= 1_m4afg_idle					, idle_empty		, 1.1		
+;	anm_idle_moving_empty				= 1_m4afg_move					, idle_empty		, 1.1
+;	anm_idle_moving_crouch_empty		= 1_m4afg_move					, idle_empty		, 0.85
+;	anm_sprint_start_empty				= 1_m4afg_sprint_start			, idle_empty          
+;	anm_sprint_end_empty				= 1_m4afg_sprint_end			, idle_empty		 																											  
+;	anm_show_empty						= 2_m4afg_draw					, idle_empty		, 1.1
+;	anm_hide_empty						= 2_m4afg_hide					, idle_empty
+;	anm_switch_mode_empty				= 2_m4afg_switch				, idle_empty
+;	anm_switch_mode_empty_aim			= 2_m4afg_switch				, idle_empty
+;;shoot										                        
+;	anm_shots							= 3_m4afg_shoot					, 3_m4_shoot		; higher number means higher recoil
+;	anm_shots_variant1              	= 3_m4afg_shoot2                , 3_m4_shoot	
+;	anm_shots_variant2					= 3_m4afg_shoot3                , 3_m4_shoot 	
+;	anm_shots_variant3					= 3_m4afg_shoot4                , 3_m4_shoot  		
+;	anm_shots_aim						= 3_m4afg_shoot					, 3_m4_shoot		; aim shoot must use small recoil
+;	anm_shots_aim_variant1     			= 3_m4afg_shoot2                , 3_m4_shoot
+;	anm_shot_l							= 3_m4afg_shoot3   				, 3_m4_shoot_last
+;	anm_shots_aim_l						= 3_m4afg_shoot3				, 3_m4_shoot_last
+;;inspect										
+;	anm_bore							= 4_m4afg_inspect				, 4_m4_inspect
+;	anm_bore_empty						= 4_m4afg_inspect_empty         , 4_m4_inspect_empty
+;;reload				                                                     
+;	anm_reload_aim						= 5_m4afg_aim_reload            , 5_m4_aim_reload
+;	anm_reload_empty_aim				= 5_m4afg_aim_reload_empty      , 5_m4_aim_reload_empty
+;	anm_reload_misfire_aim        	 	= 5_m4afg_aim_reload_jam        , 5_m4_aim_reload_jam	
+;	anm_reload							= 5_m4afg_reload_40             , 5_m4_reload_40
+;	anm_reload_variant1					= 5_m4afg_reload_alt            , 5_m4_reload_alt
+;	anm_reload_empty					= 5_m4afg_reload_empty_40       , 5_m4_reload_empty_40
+;	anm_reload_empty_variant1			= 5_m4afg_reload_empty_alt      , 5_m4_reload_empty_alt
+;	anm_reload_misfire        	 		= 5_m4afg_reload_jam            , 5_m4_reload_jam
+;;ammocheck								                                 
+;	anm_ammo_check						= 6_m4afg_ammo                  , 6_m4_ammo
+;	anm_ammo_check_empty				= 6_m4afg_ammo_empty            , 6_m4_ammo_empty
+;	anm_ammo_check_aim              	= 6_m4afg_ammo_aim              , 6_m4_ammo_aim
+;	anm_ammo_check_empty_aim        	= 6_m4afg_ammo_aim_empty        , 6_m4_ammo_aim_empty
+;
+;;-----------------------------------Vertical grip--------------------------------------
+;
+;;idle
+;	anm_idle_sprint						= 1_m4_sprint					, idle				, 1.1	
+;	anm_idle_sprint_empty				= 1_m4_sprint					, idle_empty        , 1.1	
+;
+;	anm_idle_aim						= 1_m4vg_aim					, idle
+;	anm_idle							= 1_m4vg_idle					, idle				, 1.1			
+;	anm_idle_moving						= 1_m4vg_move					, idle				, 1.1
+;	anm_idle_moving_crouch				= 1_m4vg_move					, idle				, 0.85            
+;	anm_sprint_start					= 1_m4vg_sprint_start			, idle	               
+;	anm_sprint_end						= 1_m4vg_sprint_end				, idle																													  
+;	anm_show							= 2_m4vg_draw					, idle				, 1.1	
+;	anm_hide							= 2_m4vg_hide					, idle                	              
+;	anm_switch_mode						= 2_m4vg_switch					, idle                
+;	anm_switch_mode_aim					= 2_m4vg_switch					, idle
+;;empty idle	                                                                           
+;	anm_idle_aim_empty					= 1_m4vg_aim					, idle_empty          
+;	anm_idle_empty						= 1_m4vg_idle					, idle_empty		, 1.1		
+;	anm_idle_moving_empty				= 1_m4vg_move					, idle_empty		, 1.1
+;	anm_idle_moving_crouch_empty		= 1_m4vg_move					, idle_empty		, 0.85
+;	anm_sprint_start_empty				= 1_m4vg_sprint_start			, idle_empty          
+;	anm_sprint_end_empty				= 1_m4vg_sprint_end				, idle_empty		 																											  
+;	anm_show_empty						= 2_m4vg_draw					, idle_empty		, 1.1
+;	anm_hide_empty						= 2_m4vg_hide					, idle_empty
+;	anm_switch_mode_empty				= 2_m4vg_switch					, idle_empty
+;	anm_switch_mode_empty_aim			= 2_m4vg_switch					, idle_empty
+;;shoot										                     
+;	anm_shots							= 3_m4vg_shoot					, 3_m4_shoot		; higher number means higher recoil
+;	anm_shots_variant1              	= 3_m4vg_shoot2                 , 3_m4_shoot	
+;	anm_shots_variant2					= 3_m4vg_shoot3                 , 3_m4_shoot 	
+;	anm_shots_variant3					= 3_m4vg_shoot4                 , 3_m4_shoot  		
+;	anm_shots_aim						= 3_m4vg_shoot					, 3_m4_shoot		; aim shoot must use small recoil
+;	anm_shots_aim_variant1     			= 3_m4vg_shoot2                 , 3_m4_shoot
+;	anm_shot_l							= 3_m4vg_shoot3   				, 3_m4_shoot_last
+;	anm_shots_aim_l						= 3_m4vg_shoot3					, 3_m4_shoot_last
+;;inspect										
+;	anm_bore							= 4_m4vg_inspect				, 4_m4_inspect
+;	anm_bore_empty						= 4_m4vg_inspect_empty          , 4_m4_inspect_empty
+;;reload				                                                  
+;	anm_reload_aim						= 5_m4vg_aim_reload             , 5_m4_aim_reload
+;	anm_reload_empty_aim				= 5_m4vg_aim_reload_empty       , 5_m4_aim_reload_empty
+;	anm_reload_misfire_aim        	 	= 5_m4vg_aim_reload_jam         , 5_m4_aim_reload_jam	
+;	anm_reload							= 5_m4vg_reload_30              , 5_m4_reload_30
+;	anm_reload_variant1					= 5_m4vg_reload_alt             , 5_m4_reload_alt
+;	anm_reload_empty					= 5_m4vg_reload_empty_30        , 5_m4_reload_empty_30
+;	anm_reload_empty_variant1			= 5_m4vg_reload_empty_alt       , 5_m4_reload_empty_alt
+;	anm_reload_misfire        	 		= 5_m4vg_reload_jam             , 5_m4_reload_jam
+;;ammocheck								                               
+;	anm_ammo_check						= 6_m4vg_ammo                   , 6_m4_ammo
+;	anm_ammo_check_empty				= 6_m4vg_ammo_empty             , 6_m4_ammo_empty
+;	anm_ammo_check_aim              	= 6_m4vg_ammo_aim               , 6_m4_ammo_aim
+;	anm_ammo_check_empty_aim        	= 6_m4vg_ammo_aim_empty         , 6_m4_ammo_aim_empty
+;
+;-----------------------------------Angle grip--------------------------------------
+
+;idle
+	anm_idle_sprint						= 1_m4_sprint					, idle				, 1.1	
+	anm_idle_sprint_empty				= 1_m4_sprint					, idle_empty        , 1.1	
+
+	anm_idle_aim						= 1_m4ag_aim					, idle
+	anm_idle							= 1_m4ag_idle					, idle				, 1.1			
+	anm_idle_moving						= 1_m4ag_move					, idle				, 1.1
+	anm_idle_moving_crouch				= 1_m4ag_move					, idle				, 0.85            
+	anm_sprint_start					= 1_m4ag_sprint_start			, idle	               
+	anm_sprint_end						= 1_m4ag_sprint_end				, idle																													  
+	anm_show							= 2_m4ag_draw					, idle				, 1.1	
+	anm_hide							= 2_m4ag_hide					, idle                	              
+	anm_switch_mode						= 2_m4ag_switch					, idle                
+	anm_switch_mode_aim					= 2_m4ag_switch					, idle
+;empty idle	                                                                     
+	anm_idle_aim_empty					= 1_m4ag_aim					, idle_empty          
+	anm_idle_empty						= 1_m4ag_idle					, idle_empty		, 1.1		
+	anm_idle_moving_empty				= 1_m4ag_move					, idle_empty		, 1.1
+	anm_idle_moving_crouch_empty		= 1_m4ag_move					, idle_empty		, 0.85
+	anm_sprint_start_empty				= 1_m4ag_sprint_start			, idle_empty          
+	anm_sprint_end_empty				= 1_m4ag_sprint_end				, idle_empty		 																											  
+	anm_show_empty						= 2_m4ag_draw					, idle_empty		, 1.1
+	anm_hide_empty						= 2_m4ag_hide					, idle_empty
+	anm_switch_mode_empty				= 2_m4ag_switch					, idle_empty
+	anm_switch_mode_empty_aim			= 2_m4ag_switch					, idle_empty
+;shoot										               
+	anm_shots							= 3_m4ag_shoot					, 3_m4_shoot		; higher number means higher recoil
+	anm_shots_variant1              	= 3_m4ag_shoot2                 , 3_m4_shoot	
+	anm_shots_variant2					= 3_m4ag_shoot3                 , 3_m4_shoot 	
+	anm_shots_variant3					= 3_m4ag_shoot4                 , 3_m4_shoot  		
+	anm_shots_aim						= 3_m4ag_shoot					, 3_m4_shoot		; aim shoot must use small recoil
+	anm_shots_aim_variant1     			= 3_m4ag_shoot2                 , 3_m4_shoot
+	anm_shot_l							= 3_m4ag_shoot3   				, 3_m4_shoot_last
+	anm_shots_aim_l						= 3_m4ag_shoot3					, 3_m4_shoot_last
+;inspect										
+	anm_bore							= 4_m4ag_inspect				, 4_m4_inspect
+	anm_bore_empty						= 4_m4ag_inspect_empty          , 4_m4_inspect_empty
+;reload				                                              
+	anm_reload_aim						= 5_m4ag_aim_reload             , 5_m4_aim_reload
+	anm_reload_empty_aim				= 5_m4ag_aim_reload_empty       , 5_m4_aim_reload_empty
+	anm_reload_misfire_aim        	 	= 5_m4ag_aim_reload_jam         , 5_m4_aim_reload_jam	
+	anm_reload							= 5_m4ag_reload_40              , 5_m4_reload_40
+	anm_reload_variant1					= 5_m4ag_reload_alt             , 5_m4_reload_alt
+	anm_reload_empty					= 5_m4ag_reload_empty_40        , 5_m4_reload_empty_40
+	anm_reload_empty_variant1			= 5_m4ag_reload_empty_alt       , 5_m4_reload_empty_alt
+	anm_reload_misfire        	 		= 5_m4ag_reload_jam             , 5_m4_reload_jam
+;ammocheck								                           
+	anm_ammo_check						= 6_m4ag_ammo                   , 6_m4_ammo
+	anm_ammo_check_empty				= 6_m4ag_ammo_empty             , 6_m4_ammo_empty
+	anm_ammo_check_aim              	= 6_m4ag_ammo_aim               , 6_m4_ammo_aim
+	anm_ammo_check_empty_aim        	= 6_m4ag_ammo_aim_empty         , 6_m4_ammo_aim_empty
+
+
+
+
+;-------------------------------------RVG grip--------------------------------------
+;
+;;idle
+;	anm_idle_sprint						= 1_m4_sprint					, idle				, 1.1	
+;	anm_idle_sprint_empty				= 1_m4_sprint					, idle_empty        , 1.1	
+;
+;	anm_idle_aim						= 1_m4rvg_aim					, idle
+;	anm_idle							= 1_m4rvg_idle					, idle				, 1.1			
+;	anm_idle_moving						= 1_m4rvg_move					, idle				, 1.1
+;	anm_idle_moving_crouch				= 1_m4rvg_move					, idle				, 0.85            
+;	anm_sprint_start					= 1_m4rvg_sprint_start			, idle	               
+;	anm_sprint_end						= 1_m4rvg_sprint_end			, idle																													  
+;	anm_show							= 2_m4rvg_draw					, idle				, 1.1	
+;	anm_hide							= 2_m4rvg_hide					, idle                	              
+;	anm_switch_mode						= 2_m4rvg_switch				, idle                
+;	anm_switch_mode_aim					= 2_m4rvg_switch				, idle
+;;empty idle	                                                                           
+;	anm_idle_aim_empty					= 1_m4rvg_aim					, idle_empty          
+;	anm_idle_empty						= 1_m4rvg_idle					, idle_empty		, 1.1		
+;	anm_idle_moving_empty				= 1_m4rvg_move					, idle_empty		, 1.1
+;	anm_idle_moving_crouch_empty		= 1_m4rvg_move					, idle_empty		, 0.85
+;	anm_sprint_start_empty				= 1_m4rvg_sprint_start			, idle_empty          
+;	anm_sprint_end_empty				= 1_m4rvg_sprint_end			, idle_empty		 																											  
+;	anm_show_empty						= 2_m4rvg_draw					, idle_empty		, 1.1
+;	anm_hide_empty						= 2_m4rvg_hide					, idle_empty
+;	anm_switch_mode_empty				= 2_m4rvg_switch				, idle_empty
+;	anm_switch_mode_empty_aim			= 2_m4rvg_switch				, idle_empty
+;;shoot										                     
+;	anm_shots							= 3_m4rvg_shoot				    , 3_m4_shoot		; higher number means higher recoil
+;	anm_shots_variant1              	= 3_m4rvg_shoot2                , 3_m4_shoot	
+;	anm_shots_variant2					= 3_m4rvg_shoot3                , 3_m4_shoot 	
+;	anm_shots_variant3					= 3_m4rvg_shoot4                , 3_m4_shoot  		
+;	anm_shots_aim						= 3_m4rvg_shoot					, 3_m4_shoot		; aim shoot must use small recoil
+;	anm_shots_aim_variant1     			= 3_m4rvg_shoot2                , 3_m4_shoot
+;	anm_shot_l							= 3_m4rvg_shoot3   				, 3_m4_shoot_last
+;	anm_shots_aim_l						= 3_m4rvg_shoot3				, 3_m4_shoot_last
+;;inspect										                        
+;	anm_bore							= 4_m4rvg_inspect			 	, 4_m4_inspect
+;	anm_bore_empty						= 4_m4rvg_inspect_empty         , 4_m4_inspect_empty
+;;reload				                                                    
+;	anm_reload_aim						= 5_m4rvg_aim_reload            , 5_m4_aim_reload
+;	anm_reload_empty_aim				= 5_m4rvg_aim_reload_empty      , 5_m4_aim_reload_empty
+;	anm_reload_misfire_aim        	 	= 5_m4rvg_aim_reload_jam        , 5_m4_aim_reload_jam	
+;	anm_reload							= 5_m4rvg_reload_30             , 5_m4_reload_30
+;	anm_reload_variant1					= 5_m4rvg_reload_alt            , 5_m4_reload_alt
+;	anm_reload_empty					= 5_m4rvg_reload_empty_30       , 5_m4_reload_empty_30
+;	anm_reload_empty_variant1			= 5_m4rvg_reload_empty_alt      , 5_m4_reload_empty_alt
+;	anm_reload_misfire        	 		= 5_m4rvg_reload_jam            , 5_m4_reload_jam
+;;ammocheck								                                
+;	anm_ammo_check						= 6_m4rvg_ammo                  , 6_m4_ammo
+;	anm_ammo_check_empty				= 6_m4rvg_ammo_empty            , 6_m4_ammo_empty
+;	anm_ammo_check_aim              	= 6_m4rvg_ammo_aim              , 6_m4_ammo_aim
+;	anm_ammo_check_empty_aim        	= 6_m4rvg_ammo_aim_empty        , 6_m4_ammo_aim_empty
+
+
+
+
+
